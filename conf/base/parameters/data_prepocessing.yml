@@ -1,0 +1,8 @@
+# This is a boilerplate parameters config generated for pipeline 'data_prepocessing'
+# using Kedro 0.18.3.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://kedro.readthedocs.io/en/0.18.3/kedro_project_setup/configuration.html#parameters
+columns: ['index', 'month_id', 'movement', 'fea_3', 'fea_11', 'fea_49', 'fea_118']
+
+columns: ['target_CN']

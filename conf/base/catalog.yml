@@ -1,0 +1,201 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+
+_csv: &csv
+  type: pandas.CSVDataSet
+  load_args:
+    sep: ','
+  save_args:
+    index: False
+
+_text: &text
+  type: text.TextDataSet
+  fs_args:
+    open_args_load:
+        encoding: 'utf-8'
+
+dataset_raw:
+  <<: *csv
+  filepath: data/01_raw/dataset_raw.csv
+dataset_oot:
+  <<: *csv
+  filepath: data/01_raw/dataset_oot.csv
+dataset:
+  <<: *csv
+  filepath: data/02_intermediate/dataset.csv
+oot_dataset:
+  <<: *csv
+  filepath: data/02_intermediate/oot_dataset.csv
+dataset_target:
+  <<: *csv
+  filepath: data/02_intermediate/dataset_target.csv
+oot_dataset_target:
+  <<: *csv
+  filepath: data/02_intermediate/oot_dataset_target.csv
+dataset_encoding:
+  <<: *csv
+  filepath: data/02_intermediate/dataset_encoding.csv
+oot_dataset_encoding:
+  <<: *csv
+  filepath: data/02_intermediate/oot_dataset_encoding.csv
+training:
+  <<: *csv
+  filepath: data/05_model_input/training.csv
+testing:
+  <<: *csv
+  filepath: data/05_model_input/testing.csv
+df_model_CN:
+  <<: *csv
+  filepath: data/04_feature/df_model_CN.csv
+df_model_CR:
+  <<: *csv
+  filepath: data/04_feature/df_model_CR.csv
+df_model_TN:
+  <<: *csv
+  filepath: data/04_feature/df_model_TN.csv
+df_model_TR:
+  <<: *csv
+  filepath: data/04_feature/df_model_TR.csv
+training_CN_boostrap:
+  <<: *csv
+  filepath: data/05_model_input/training_CN_boostrap.csv
+training_CR_boostrap:
+  <<: *csv
+  filepath: data/05_model_input/training_CR_boostrap.csv
+training_TN_boostrap:
+  <<: *csv
+  filepath: data/05_model_input/training_TN_boostrap.csv
+training_TR_boostrap:
+  <<: *csv
+  filepath: data/05_model_input/training_TR_boostrap.csv
+CN_X_train:
+  <<: *csv
+  filepath: data/05_model_input/CN_X_train.csv
+CN_y_train:
+  <<: *csv
+  filepath: data/05_model_input/CN_y_train.csv
+CN_X_test:
+  <<: *csv
+  filepath: data/05_model_input/CN_X_test.csv
+CN_y_test:
+  <<: *csv
+  filepath: data/05_model_input/CN_y_test.csv
+CR_X_train:
+  <<: *csv
+  filepath: data/05_model_input/CR_X_train.csv
+CR_y_train:
+  <<: *csv
+  filepath: data/05_model_input/CR_y_train.csv
+CR_X_test:
+  <<: *csv
+  filepath: data/05_model_input/CR_X_test.csv
+CR_y_test:
+  <<: *csv
+  filepath: data/05_model_input/CR_y_test.csv
+TN_X_train:
+  <<: *csv
+  filepath: data/05_model_input/TN_X_train.csv
+TN_y_train:
+  <<: *csv
+  filepath: data/05_model_input/TN_y_train.csv
+TN_X_test:
+  <<: *csv
+  filepath: data/05_model_input/TN_X_test.csv
+TN_y_test:
+  <<: *csv
+  filepath: data/05_model_input/TN_y_test.csv
+TR_X_train:
+  <<: *csv
+  filepath: data/05_model_input/TR_X_train.csv
+TR_y_train:
+  <<: *csv
+  filepath: data/05_model_input/TR_y_train.csv
+TR_X_test:
+  <<: *csv
+  filepath: data/05_model_input/TR_X_test.csv
+TR_y_test:
+  <<: *csv
+  filepath: data/05_model_input/TR_y_test.csv
+CN_training_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/CN_training_results_cat.csv
+CN_testing_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/CN_testing_results_cat.csv
+model_CN:
+  <<: *csv
+  filepath: data/07_model_output/model_CN.csv
+CR_training_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/CR_training_results_cat.csv
+CR_testing_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/CR_testing_results_cat.csv
+model_CR:
+  <<: *csv
+  filepath: data/07_model_output/model_CR.csv
+TN_training_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/TN_training_results_cat.csv
+TN_testing_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/TN_testing_results_cat.csv
+model_TN:
+  <<: *csv
+  filepath: data/07_model_output/model_TN.csv
+TR_training_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/TR_training_results_cat.csv
+TR_testing_results_cat:
+  <<: *csv
+  filepath: data/07_model_output/TR_testing_results_cat.csv
+model_TR:
+  <<: *csv
+  filepath: data/07_model_output/model_TR.csv
+metrics_CN:
+  <<: *csv
+  filepath: data/08_reporting/metrics_CN.csv
+metrics_CR:
+  <<: *csv
+  filepath: data/08_reporting/metrics_CR.csv
+metrics_TN:
+  <<: *csv
+  filepath: data/08_reporting/metrics_TN.csv
+metrics_TR:
+  <<: *csv
+  filepath: data/08_reporting/metrics_TR.csv
+CN_prediction:
+  <<: *csv
+  filepath: data/07_model_output/CN_prediction.csv
+CN_probability:
+  <<: *csv
+  filepath: data/07_model_output/CN_probability.csv
+CR_prediction:
+  <<: *csv
+  filepath: data/07_model_output/CR_prediction.csv
+CR_probability:
+  <<: *csv
+  filepath: data/07_model_output/CR_probability.csv
+TN_prediction:
+  <<: *csv
+  filepath: data/07_model_output/TN_prediction.csv
+TN_probability:
+  <<: *csv
+  filepath: data/07_model_output/TN_probability.csv
+TR_prediction:
+  <<: *csv
+  filepath: data/07_model_output/TR_prediction.csv
+TR_probability:
+  <<: *csv
+  filepath: data/07_model_output/TR_probability.csv
+oot:
+  <<: *csv
+  filepath: data/07_model_output/oot.csv
+training_4k:
+  <<: *csv
+  filepath: data/07_model_output/training_4k.csv
+testing_1k:
+  <<: *csv
+  filepath: data/07_model_output/testing_1k.csv

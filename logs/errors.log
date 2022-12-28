@@ -1,0 +1,424 @@
+2022-12-01 12:25:18,254 - kedro.pipeline.node - ERROR - Node 'encoding_node: encoding_target_class([dataset]) -> [dataset_encoding]' failed with error: 
+'DataFrame' object has no attribute 'target_class'
+2022-12-02 10:46:46,767 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 11:17:55,061 - kedro.pipeline.node - ERROR - Node 'split_data_node: split_data([df_model]) -> [train,test]' failed with error: 
+name 'train_test_split' is not defined
+2022-12-02 11:25:46,332 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 11:26:17,206 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 11:45:09,379 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 11:51:19,319 - kedro.pipeline.node - ERROR - Node 'split_xyz_node: split_xyz([train,test]) -> [X_train,y_train,CN_train,CR_train,TN_train,TR_train,X_test,y_test,CN_test,CR_test,TN_test,TR_test]' failed with error: 
+"['response' 'target_CN' 'target_CR' 'target_TN'] not found in axis"
+2022-12-02 11:58:13,239 - kedro.pipeline.node - ERROR - Node 'split_xyz_node: split_xyz([train,test]) -> [X_train,y_train,TR_train,X_test,y_test,TR_test]' failed with error: 
+'DataFrame' object has no attribute 'response'
+2022-12-02 12:01:19,685 - kedro.pipeline.node - ERROR - Node 'feature_node: feature_selection([dataset_encoding]) -> [df_model]' failed with error: 
+could not convert string to float: 'gojek'
+2022-12-02 12:17:03,652 - kedro.pipeline.node - ERROR - Node 'feature_node: feature_selection([dataset_encoding]) -> [df_model]' failed with error: 
+could not convert string to float: 'gojek'
+2022-12-02 12:37:58,187 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 13:08:06,131 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,dataset]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+name 'selected_features' is not defined
+2022-12-02 13:19:34,341 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,dataset]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+"['target_CN' 'target_CR' 'target_TN' 'target_TR'] not found in axis"
+2022-12-02 13:34:11,483 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,df_selected_features]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+cannot reindex from a duplicate axis
+2022-12-02 13:40:18,959 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,df_selected_features]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+cannot reindex from a duplicate axis
+2022-12-02 13:57:49,041 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,df_selected_features]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+cannot reindex from a duplicate axis
+2022-12-02 14:36:13,656 - kedro.pipeline.node - ERROR - Node 'upsample_node: upsample([training,testing,df_selected_features]) -> [train_up,test_up,df_model_TR_test]' failed with error: 
+cannot reindex from a duplicate axis
+2022-12-02 14:58:30,386 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 15:18:40,156 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing,train_up]) -> [auc_train,auc_test]' failed with error: 
+"['treatment'] not found in axis"
+2022-12-02 15:23:11,923 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing]) -> [auc_train,auc_test]' failed with error: 
+"['target_CN' 'target_CR' 'target_TN'] not found in axis"
+2022-12-02 15:42:33,300 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing]) -> [auc_train,auc_test]' failed with error: 
+"['treatment'] not found in axis"
+2022-12-02 15:49:37,392 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([training,testing]) -> [auc_train,auc_test]' failed with error: 
+name 'proba_CN' is not defined
+2022-12-02 16:51:30,098 - kedro.pipeline.node - ERROR - Node 'evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test]' failed with error: 
+Failed to save outputs of node evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test].
+The node definition contains a list of outputs ['auc_train', 'auc_test'], whereas the node function returned a 'str'.
+2022-12-02 17:06:44,421 - kedro.pipeline.node - ERROR - Node 'evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test]' failed with error: 
+Failed to save outputs of node evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test].
+The node definition contains a list of outputs ['auc_train', 'auc_test'], whereas the node function returned a 'str'.
+2022-12-02 17:20:04,281 - kedro.pipeline.node - ERROR - Node 'evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test]' failed with error: 
+Failed to save outputs of node evaluation_node: evaluation([training_210k,testing_90k]) -> [auc_train,auc_test].
+The node definition contains a list of outputs ['auc_train', 'auc_test'], whereas the node function returned a 'str'.
+2022-12-02 17:32:14,610 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-02 17:42:41,111 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-05 08:27:23,256 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([train_up,test_up]) -> [train,test]' failed with error: 
+"['response'] not found in axis"
+2022-12-05 08:55:53,081 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-05 09:07:16,927 - kedro.pipeline.node - ERROR - Node 'upsample_node: upsample([training,testing,df_selected_features]) -> [df_model_TR_train,df_model_TR_test]' failed with error: 
+Reindexing only valid with uniquely valued Index objects
+2022-12-05 09:15:52,554 - kedro.pipeline.node - ERROR - Node 'upsample_node: upsample([training,testing,df_selected_features]) -> [df_model_TR_train,df_model_TR_test]' failed with error: 
+Reindexing only valid with uniquely valued Index objects
+2022-12-05 09:40:21,668 - kedro.pipeline.node - ERROR - Node 'upsample_node: upsample([training,testing,df_selected_features]) -> [df_model_TR_train,df_model_TR_test]' failed with error: 
+Reindexing only valid with uniquely valued Index objects
+2022-12-05 13:46:05,570 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([train_up,test_up]) -> [train,test]' failed with error: 
+"['response'] not found in axis"
+2022-12-05 15:21:14,948 - uvicorn.error - ERROR - [Errno 10048] error while attempting to bind on address ('127.0.0.1', 4141): only one usage of each socket address (protocol/network address/port) is normally permitted
+2022-12-08 10:43:28,569 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([df_model_TR_up,df_model_TR_test]) -> [train,test]' failed with error: 
+"['response'] not found in axis"
+2022-12-09 13:46:27,318 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([train_TR_up,test_TR_up]) -> [train,test]' failed with error: 
+"['response'] not found in axis"
+2022-12-09 13:51:25,014 - kedro.pipeline.node - ERROR - Node 'modeling_node: modeling([train_TR_up,test_TR_up]) -> [train,test]' failed with error: 
+"['response'] not found in axis"
+2022-12-12 19:52:33,523 - kedro.pipeline.node - ERROR - Node 'upsample_node: upsample([training]) -> [training_CN_boostrap]' failed with error: 
+Failed to save outputs of node upsample_node: upsample([training]) -> [training_CN_boostrap].
+The node definition contains a list of outputs ['training_CN_boostrap'], whereas the node function returned a 'Series'.
+2022-12-12 19:58:16,238 - kedro.pipeline.node - ERROR - Node 'split_xy_node: split_xy([training_CN_boostrap,testing]) -> [X_train,y_train,X_test,y_test]' failed with error: 
+"['treatment', 'response'] not found in axis"
+2022-12-26 18:19:51,067 - kedro.pipeline.node - ERROR - Node 'modeling_CN_node: modeling_CN([CN_X_train,CN_y_train,CN_X_test,CN_y_test]) -> [CN_training_results_cat,CN_testing_results_cat,model_CN]' failed with error: 
+
+All the 3240 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1620 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5126, in fit
+    CatBoostClassifier._check_is_compatible_loss(params['loss_function'])
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5477, in _check_is_compatible_loss
+    if isinstance(loss_function, str) and not CatBoost._is_classification_objective(loss_function):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1908, in _is_classification_objective
+    return isinstance(loss_function, str) and is_classification_objective(loss_function)
+  File "_catboost.pyx", line 5999, in _catboost.is_classification_objective
+  File "_catboost.pyx", line 6000, in _catboost.is_classification_objective
+_catboost.CatBoostError: C:/Program Files (x86)/Go Agent/pipelines/BuildMaster/catboost.git/catboost/private/libs/options/loss_description.cpp:18: LogLoss loss is not supported
+
+--------------------------------------------------------------------------------
+324 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'grape'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="grape": Cannot convert 'b'grape'' to float
+
+--------------------------------------------------------------------------------
+1296 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'gojek'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="gojek": Cannot convert 'b'gojek'' to float
+
+2022-12-26 18:53:20,217 - kedro.pipeline.node - ERROR - Node 'modeling_CN_node: modeling_CN([CN_X_train,CN_y_train,CN_X_test,CN_y_test]) -> [CN_training_results_cat,CN_testing_results_cat,model_CN]' failed with error: 
+
+All the 3240 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1620 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5126, in fit
+    CatBoostClassifier._check_is_compatible_loss(params['loss_function'])
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5477, in _check_is_compatible_loss
+    if isinstance(loss_function, str) and not CatBoost._is_classification_objective(loss_function):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1908, in _is_classification_objective
+    return isinstance(loss_function, str) and is_classification_objective(loss_function)
+  File "_catboost.pyx", line 5999, in _catboost.is_classification_objective
+  File "_catboost.pyx", line 6000, in _catboost.is_classification_objective
+_catboost.CatBoostError: C:/Program Files (x86)/Go Agent/pipelines/BuildMaster/catboost.git/catboost/private/libs/options/loss_description.cpp:18: LogLoss loss is not supported
+
+--------------------------------------------------------------------------------
+324 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'grape'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="grape": Cannot convert 'b'grape'' to float
+
+--------------------------------------------------------------------------------
+1296 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'gojek'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="gojek": Cannot convert 'b'gojek'' to float
+
+2022-12-28 10:17:23,440 - kedro.pipeline.node - ERROR - Node 'modeling_CN_node: modeling_CN([CN_X_train,CN_y_train,CN_X_test,CN_y_test]) -> [CN_training_results_cat,CN_testing_results_cat,model_CN]' failed with error: 
+
+All the 3240 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1620 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5126, in fit
+    CatBoostClassifier._check_is_compatible_loss(params['loss_function'])
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5477, in _check_is_compatible_loss
+    if isinstance(loss_function, str) and not CatBoost._is_classification_objective(loss_function):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1908, in _is_classification_objective
+    return isinstance(loss_function, str) and is_classification_objective(loss_function)
+  File "_catboost.pyx", line 5999, in _catboost.is_classification_objective
+  File "_catboost.pyx", line 6000, in _catboost.is_classification_objective
+_catboost.CatBoostError: C:/Program Files (x86)/Go Agent/pipelines/BuildMaster/catboost.git/catboost/private/libs/options/loss_description.cpp:18: LogLoss loss is not supported
+
+--------------------------------------------------------------------------------
+324 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'grape'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="grape": Cannot convert 'b'grape'' to float
+
+--------------------------------------------------------------------------------
+1296 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'gojek'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="gojek": Cannot convert 'b'gojek'' to float
+
+2022-12-28 10:47:55,661 - kedro.pipeline.node - ERROR - Node 'modeling_CN_node: modeling_CN([CN_X_train,CN_y_train,CN_X_test,CN_y_test]) -> [CN_training_results_cat,CN_testing_results_cat,model_CN]' failed with error: 
+
+All the 3240 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1620 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5126, in fit
+    CatBoostClassifier._check_is_compatible_loss(params['loss_function'])
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5477, in _check_is_compatible_loss
+    if isinstance(loss_function, str) and not CatBoost._is_classification_objective(loss_function):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1908, in _is_classification_objective
+    return isinstance(loss_function, str) and is_classification_objective(loss_function)
+  File "_catboost.pyx", line 5999, in _catboost.is_classification_objective
+  File "_catboost.pyx", line 6000, in _catboost.is_classification_objective
+_catboost.CatBoostError: C:/Program Files (x86)/Go Agent/pipelines/BuildMaster/catboost.git/catboost/private/libs/options/loss_description.cpp:18: LogLoss loss is not supported
+
+--------------------------------------------------------------------------------
+324 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'grape'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="grape": Cannot convert 'b'grape'' to float
+
+--------------------------------------------------------------------------------
+1296 fits failed with the following error:
+Traceback (most recent call last):
+  File "_catboost.pyx", line 2286, in _catboost.get_float_feature
+  File "_catboost.pyx", line 1139, in _catboost._FloatOrNan
+  File "_catboost.pyx", line 951, in _catboost._FloatOrNanFromString
+TypeError: Cannot convert 'b'gojek'' to float
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\sklearn\model_selection\_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 5128, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2339, in _fit
+    train_params = self._prepare_train_params(
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 2220, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1438, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 792, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "C:\Users\ASUS\anaconda3\envs\kedro-environment\lib\site-packages\catboost\core.py", line 1419, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3954, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4004, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3820, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2786, in _catboost._set_features_order_data_pd_data_frame
+  File "_catboost.pyx", line 2327, in _catboost.create_num_factor_data
+  File "_catboost.pyx", line 2288, in _catboost.get_float_feature
+_catboost.CatBoostError: Bad value for num_feature[non_default_doc_idx=0,feature_idx=1]="gojek": Cannot convert 'b'gojek'' to float
+
